@@ -16,29 +16,29 @@ const cols = {
     },
     rating: {
         type: dataTypes.DECIMAL(3, 1).UNSIGNED,
-        allowNull: false,
+        allowNull: false
     }, 
     awards: {
-        type: dataTypes.INTEGER(10).UNSIGNED,
-        allowNull: false,
-    },
-    length: {
-        type: dataTypes.INTEGER(10).UNSIGNED,
-    },
-    genre_id: {
-        type: dataTypes.INTEGER(10).UNSIGNED,
+        type: dataTypes.INTEGER(10),
+        allowNull: false
     },
     release_date: {
         type: dataTypes.DATE,
-        allowNull:false, /* no acepta nulos */
+        allowNull:false /* no acepta nulos */
+    },
+    length: {
+        type: dataTypes.INTEGER(10)
+    },
+    genre_id: {
+        type: dataTypes.INTEGER(10)
     }
 }
-const config = {
+let config = {
     tableName: "movies",
-    createdAt: "created_at",
-    updatedAt: "updated_at"
+    createdAt: "created_at",/* para decirle a la variable la columna */
+    updatedAt: "updated_at"/*  */
 }
 
-const Genre = sequelize.define(alias, cols, config)
-return Genre;
+const Movie = sequelize.define(alias, cols, config)
+return Movie;
 }
